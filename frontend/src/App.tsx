@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingLayout from "./layouts/LandingLayout";
+import AuthLayout from "./layouts/AuthLayout";
+import LandingPage from "./pages/LandingPage";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          {/* Public Routes */}
+          <Route element={<LandingLayout />}>
+            <Route path="/" element={<LandingPage />} />
+          </Route>
+
+          {/* Auth Routes */}
+          <Route element={<AuthLayout />}>
+            <Route path="/dashboard" element={<div>Dashboard</div>} />
+            <Route path="/habits" element={<div>Habits</div>} />
+            <Route path="/profile" element={<div>Profile</div>} />
+          </Route>
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
