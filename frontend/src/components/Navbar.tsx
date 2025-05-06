@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import { useTheme } from "../contexts/ThemeContext";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
     return (
-        <div className={`navbar shadow-lg`}>
+        <div className="navbar shadow-lg">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -19,13 +18,8 @@ const Navbar = () => {
                         <li><Link to="/signup">Sign Up</Link></li>
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost text-xl">
-                    <div className="flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span>HabitForge</span>
-                    </div>
+                <Link to="/" className="navbar-logo">
+                    <img src="src/assets/logo-hf.svg" alt="HabitForge" className="" />
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -46,4 +40,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar; 
+export default Navbar;
