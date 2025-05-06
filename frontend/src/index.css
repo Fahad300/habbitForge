@@ -61,7 +61,6 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: border-color 0.25s;
-  color: #fff !important;
 }
 
 button:hover {
@@ -70,6 +69,10 @@ button:hover {
 
 .btn-ghost {
   color: currentColor !important;
+}
+
+.btn-primary {
+  color: #fff !important;
 }
 
 .navbar-logo img {

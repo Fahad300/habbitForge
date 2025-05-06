@@ -1,0 +1,495 @@
+2025-05-06 20:00:29,792 - auth - INFO - Security configuration loaded - Algorithm: HS256, Token Expiry: 30 minutes
+2025-05-06 20:00:29,795 - passlib.registry - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-06 20:00:37,270 - auth - INFO - Security configuration loaded - Algorithm: HS256, Token Expiry: 30 minutes
+2025-05-06 20:00:37,275 - passlib.registry - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-06 20:00:43,755 - auth - INFO - Security configuration loaded - Algorithm: HS256, Token Expiry: 30 minutes
+2025-05-06 20:00:43,758 - passlib.registry - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-06 20:01:02,238 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:01:02,242 - multipart.multipart - DEBUG - Calling on_field_name with data[0:8]
+2025-05-06 20:01:02,242 - multipart.multipart - DEBUG - Calling on_field_data with data[9:13]
+2025-05-06 20:01:02,242 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:01:02,242 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:01:02,244 - multipart.multipart - DEBUG - Calling on_field_name with data[14:22]
+2025-05-06 20:01:02,244 - multipart.multipart - DEBUG - Calling on_field_data with data[23:31]
+2025-05-06 20:01:02,244 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:01:02,244 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:01:02,244 - multipart.multipart - DEBUG - Calling on_field_name with data[32:42]
+2025-05-06 20:01:02,245 - multipart.multipart - DEBUG - Calling on_field_data with data[43:51]
+2025-05-06 20:01:02,245 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:01:02,245 - multipart.multipart - DEBUG - Calling on_end with no data
+2025-05-06 20:03:17,793 - auth - INFO - Security configuration loaded - Algorithm: HS256, Token Expiry: 30 minutes
+2025-05-06 20:03:17,797 - passlib.registry - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-06 20:03:24,929 - auth - INFO - Security configuration loaded - Algorithm: HS256, Token Expiry: 30 minutes
+2025-05-06 20:03:24,933 - passlib.registry - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-06 20:03:39,986 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:03:39,987 - multipart.multipart - DEBUG - Calling on_field_name with data[0:8]
+2025-05-06 20:03:39,987 - multipart.multipart - DEBUG - Calling on_field_data with data[9:13]
+2025-05-06 20:03:39,987 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:03:39,987 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:03:39,988 - multipart.multipart - DEBUG - Calling on_field_name with data[14:22]
+2025-05-06 20:03:39,988 - multipart.multipart - DEBUG - Calling on_field_data with data[23:31]
+2025-05-06 20:03:39,988 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:03:39,988 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:03:39,988 - multipart.multipart - DEBUG - Calling on_field_name with data[32:42]
+2025-05-06 20:03:39,988 - multipart.multipart - DEBUG - Calling on_field_data with data[43:51]
+2025-05-06 20:03:39,988 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:03:39,988 - multipart.multipart - DEBUG - Calling on_end with no data
+2025-05-06 20:03:40,003 - main - DEBUG - Login attempt for user: test
+2025-05-06 20:03:40,003 - auth - DEBUG - Attempting to authenticate user: test
+2025-05-06 20:03:40,025 - auth - ERROR - Error during authentication: (psycopg2.errors.UndefinedColumn) column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_active AS users_is_active, users.points AS users_points, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.oauth_provider AS users_oauth_provider, users.oauth_id AS users_oauth_id, users.profile_picture AS users_profile_picture 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'test', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Learning\habbitForge\code\habbitForge\backend\auth.py", line 65, in authenticate_user
+    user = db.query(models.User).filter(models.User.username == username).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_active AS users_is_active, users.points AS users_points, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.oauth_provider AS users_oauth_provider, users.oauth_id AS users_oauth_id, users.profile_picture AS users_profile_picture 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'test', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-06 20:03:40,087 - main - WARNING - Failed login attempt for user: test
+2025-05-06 20:03:51,379 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:03:51,380 - multipart.multipart - DEBUG - Calling on_field_name with data[0:8]
+2025-05-06 20:03:51,380 - multipart.multipart - DEBUG - Calling on_field_data with data[9:13]
+2025-05-06 20:03:51,380 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:03:51,381 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:03:51,381 - multipart.multipart - DEBUG - Calling on_field_name with data[14:22]
+2025-05-06 20:03:51,381 - multipart.multipart - DEBUG - Calling on_field_data with data[23:31]
+2025-05-06 20:03:51,381 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:03:51,382 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:03:51,382 - multipart.multipart - DEBUG - Calling on_field_name with data[32:42]
+2025-05-06 20:03:51,382 - multipart.multipart - DEBUG - Calling on_field_data with data[43:51]
+2025-05-06 20:03:51,382 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:03:51,383 - multipart.multipart - DEBUG - Calling on_end with no data
+2025-05-06 20:03:51,386 - main - DEBUG - Login attempt for user: test
+2025-05-06 20:03:51,386 - auth - DEBUG - Attempting to authenticate user: test
+2025-05-06 20:03:51,387 - auth - ERROR - Error during authentication: (psycopg2.errors.UndefinedColumn) column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_active AS users_is_active, users.points AS users_points, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.oauth_provider AS users_oauth_provider, users.oauth_id AS users_oauth_id, users.profile_picture AS users_profile_picture 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'test', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Learning\habbitForge\code\habbitForge\backend\auth.py", line 65, in authenticate_user
+    user = db.query(models.User).filter(models.User.username == username).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_active AS users_is_active, users.points AS users_points, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.oauth_provider AS users_oauth_provider, users.oauth_id AS users_oauth_id, users.profile_picture AS users_profile_picture 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'test', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-06 20:03:51,391 - main - WARNING - Failed login attempt for user: test
+2025-05-06 20:04:19,550 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:04:19,551 - multipart.multipart - DEBUG - Calling on_field_name with data[0:8]
+2025-05-06 20:04:19,551 - multipart.multipart - DEBUG - Calling on_field_data with data[9:13]
+2025-05-06 20:04:19,551 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:04:19,551 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:04:19,552 - multipart.multipart - DEBUG - Calling on_field_name with data[14:22]
+2025-05-06 20:04:19,552 - multipart.multipart - DEBUG - Calling on_field_data with data[23:31]
+2025-05-06 20:04:19,552 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:04:19,552 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:04:19,552 - multipart.multipart - DEBUG - Calling on_field_name with data[32:42]
+2025-05-06 20:04:19,552 - multipart.multipart - DEBUG - Calling on_field_data with data[43:51]
+2025-05-06 20:04:19,552 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:04:19,552 - multipart.multipart - DEBUG - Calling on_end with no data
+2025-05-06 20:04:19,554 - main - DEBUG - Login attempt for user: test
+2025-05-06 20:04:19,555 - auth - DEBUG - Attempting to authenticate user: test
+2025-05-06 20:04:19,557 - auth - ERROR - Error during authentication: (psycopg2.errors.UndefinedColumn) column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_active AS users_is_active, users.points AS users_points, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.oauth_provider AS users_oauth_provider, users.oauth_id AS users_oauth_id, users.profile_picture AS users_profile_picture 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'test', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Learning\habbitForge\code\habbitForge\backend\auth.py", line 65, in authenticate_user
+    user = db.query(models.User).filter(models.User.username == username).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_active AS users_is_active, users.points AS users_points, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.oauth_provider AS users_oauth_provider, users.oauth_id AS users_oauth_id, users.profile_picture AS users_profile_picture 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'test', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-06 20:04:19,560 - main - WARNING - Failed login attempt for user: test
+2025-05-06 20:06:58,122 - auth - INFO - Security configuration loaded - Algorithm: HS256, Token Expiry: 30 minutes
+2025-05-06 20:06:58,126 - passlib.registry - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-06 20:07:13,347 - auth - INFO - Security configuration loaded - Algorithm: HS256, Token Expiry: 30 minutes
+2025-05-06 20:07:13,350 - passlib.registry - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-06 20:07:33,062 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:07:33,062 - multipart.multipart - DEBUG - Calling on_field_name with data[0:8]
+2025-05-06 20:07:33,062 - multipart.multipart - DEBUG - Calling on_field_data with data[9:13]
+2025-05-06 20:07:33,063 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:07:33,063 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:07:33,063 - multipart.multipart - DEBUG - Calling on_field_name with data[14:22]
+2025-05-06 20:07:33,063 - multipart.multipart - DEBUG - Calling on_field_data with data[23:31]
+2025-05-06 20:07:33,063 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:07:33,063 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:07:33,064 - multipart.multipart - DEBUG - Calling on_field_name with data[32:42]
+2025-05-06 20:07:33,064 - multipart.multipart - DEBUG - Calling on_field_data with data[43:51]
+2025-05-06 20:07:33,064 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:07:33,064 - multipart.multipart - DEBUG - Calling on_end with no data
+2025-05-06 20:07:33,077 - main - DEBUG - Login attempt for user: test
+2025-05-06 20:07:33,077 - auth - DEBUG - Attempting to authenticate user: test
+2025-05-06 20:07:33,097 - auth - ERROR - Error during authentication: (psycopg2.errors.UndefinedColumn) column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_active AS users_is_active, users.points AS users_points, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.oauth_provider AS users_oauth_provider, users.oauth_id AS users_oauth_id, users.profile_picture AS users_profile_picture 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'test', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Learning\habbitForge\code\habbitForge\backend\auth.py", line 67, in authenticate_user
+    user = db.query(models.User).filter(models.User.username == username).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_active AS users_is_active, users.points AS users_points, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.oauth_provider AS users_oauth_provider, users.oauth_id AS users_oauth_id, users.profile_picture AS users_profile_picture 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'test', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-06 20:07:33,104 - main - WARNING - Failed login attempt for user: test
+2025-05-06 20:08:27,194 - auth - INFO - Security configuration loaded - Algorithm: HS256, Token Expiry: 30 minutes
+2025-05-06 20:08:27,198 - passlib.registry - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-06 20:08:46,512 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:08:46,512 - multipart.multipart - DEBUG - Calling on_field_name with data[0:8]
+2025-05-06 20:08:46,512 - multipart.multipart - DEBUG - Calling on_field_data with data[9:13]
+2025-05-06 20:08:46,512 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:08:46,513 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:08:46,513 - multipart.multipart - DEBUG - Calling on_field_name with data[14:22]
+2025-05-06 20:08:46,513 - multipart.multipart - DEBUG - Calling on_field_data with data[23:31]
+2025-05-06 20:08:46,513 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:08:46,513 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:08:46,513 - multipart.multipart - DEBUG - Calling on_field_name with data[32:42]
+2025-05-06 20:08:46,513 - multipart.multipart - DEBUG - Calling on_field_data with data[43:51]
+2025-05-06 20:08:46,514 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:08:46,514 - multipart.multipart - DEBUG - Calling on_end with no data
+2025-05-06 20:08:46,523 - main - DEBUG - Login attempt for user: test
+2025-05-06 20:08:46,523 - auth - DEBUG - Attempting to authenticate user: test
+2025-05-06 20:08:46,540 - auth - ERROR - Error during authentication: (psycopg2.errors.UndefinedColumn) column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_active AS users_is_active, users.points AS users_points, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.oauth_provider AS users_oauth_provider, users.oauth_id AS users_oauth_id, users.profile_picture AS users_profile_picture 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'test', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Learning\habbitForge\code\habbitForge\backend\auth.py", line 67, in authenticate_user
+    user = db.query(models.User).filter(models.User.username == username).first()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2748, in first
+    return self.limit(1)._iter().first()  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2190, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column users.oauth_provider does not exist
+LINE 1: ...created_at, users.updated_at AS users_updated_at, users.oaut...
+                                                             ^
+
+[SQL: SELECT users.id AS users_id, users.email AS users_email, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_active AS users_is_active, users.points AS users_points, users.created_at AS users_created_at, users.updated_at AS users_updated_at, users.oauth_provider AS users_oauth_provider, users.oauth_id AS users_oauth_id, users.profile_picture AS users_profile_picture 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'test', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-06 20:08:46,549 - main - WARNING - Failed login attempt for user: test
+2025-05-06 20:10:01,238 - auth - INFO - Security configuration loaded - Algorithm: HS256, Token Expiry: 30 minutes
+2025-05-06 20:10:01,244 - passlib.registry - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-06 20:10:30,816 - auth - INFO - Security configuration loaded - Algorithm: HS256, Token Expiry: 30 minutes
+2025-05-06 20:10:30,820 - passlib.registry - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-06 20:11:15,077 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:11:15,077 - multipart.multipart - DEBUG - Calling on_field_name with data[0:8]
+2025-05-06 20:11:15,077 - multipart.multipart - DEBUG - Calling on_field_data with data[9:13]
+2025-05-06 20:11:15,078 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:11:15,078 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:11:15,078 - multipart.multipart - DEBUG - Calling on_field_name with data[14:22]
+2025-05-06 20:11:15,078 - multipart.multipart - DEBUG - Calling on_field_data with data[23:31]
+2025-05-06 20:11:15,078 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:11:15,078 - multipart.multipart - DEBUG - Calling on_field_start with no data
+2025-05-06 20:11:15,078 - multipart.multipart - DEBUG - Calling on_field_name with data[32:42]
+2025-05-06 20:11:15,078 - multipart.multipart - DEBUG - Calling on_field_data with data[43:51]
+2025-05-06 20:11:15,079 - multipart.multipart - DEBUG - Calling on_field_end with no data
+2025-05-06 20:11:15,079 - multipart.multipart - DEBUG - Calling on_end with no data
+2025-05-06 20:11:15,089 - main - DEBUG - Login attempt for user: test
+2025-05-06 20:11:15,090 - auth - DEBUG - Attempting to authenticate user: test
+2025-05-06 20:11:15,114 - auth - DEBUG - User found: test, checking password
+2025-05-06 20:11:15,115 - passlib.handlers.bcrypt - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "d:\Learning\habbitForge\code\habbitForge\.venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-05-06 20:11:15,130 - passlib.handlers.bcrypt - DEBUG - detected 'bcrypt' backend, version '<unknown>'
+2025-05-06 20:11:15,132 - passlib.handlers.bcrypt - DEBUG - 'bcrypt' backend lacks $2$ support, enabling workaround
+2025-05-06 20:11:15,357 - auth - INFO - Successfully authenticated user: test
+2025-05-06 20:11:15,357 - auth - DEBUG - Creating access token for user: test
+2025-05-06 20:11:15,360 - main - INFO - Successful login for user: test

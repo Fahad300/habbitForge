@@ -21,9 +21,18 @@ class User(UserBase):
     points: int
     created_at: datetime
     updated_at: Optional[datetime] = None
+    oauth_provider: Optional[str] = None
+    oauth_id: Optional[str] = None
+    profile_picture: Optional[str] = None
 
     class Config:
         from_attributes = True
+
+class UserUpdate(BaseModel):
+    email: Optional[EmailStr] = None
+    username: Optional[constr(min_length=3, max_length=50)] = None
+    password: Optional[constr(min_length=8)] = None
+    is_active: Optional[bool] = None
 
 # Habit Schemas
 class HabitBase(BaseModel):
@@ -120,6 +129,7 @@ class Badge(BadgeBase):
 class Token(BaseModel):
     access_token: str
     token_type: str
+    user: Optional[dict] = None
 
 class TokenData(BaseModel):
     username: Optional[str] = None 
